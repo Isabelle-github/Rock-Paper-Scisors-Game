@@ -1,0 +1,56 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,500;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+
+$backgroundColor: rgb(115, 115, 115);
+$blackColor:#2e2e2e ;
+$whiteColor:#fff;
+$redColor: red;
+
+
+*{
+    font-family: 'Work Sans', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: $whiteColor;
+}
+body{
+    background-color: $backgroundColor;
+  }
+
+header{
+    h1{
+        width: 50%;
+        margin:0 auto;
+        text-align: center;
+        border-style: solid;
+    }
+}
+main{
+    width: 50%;
+    margin:0 auto;
+    text-align: center;
+    border-style: solid;
+    background-color: $blackColor;
+    a{
+        text-decoration: none;
+        text-transform: none;
+        color: $backgroundColor;
+        background-color: $whiteColor;
+        padding:0.5em 1em;
+        border-color: $whiteColor;
+    }
+} 
+main{
+    form, article{
+       border: solid 1px $whiteColor;
+       width: 50%;
+       margin: 0 auto;
+       margin-top: 1em;
+    }
+    article{
+        display: flex;
+       justify-content: space-between; 
+    }
+}
