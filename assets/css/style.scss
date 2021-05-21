@@ -17,7 +17,7 @@ $redColor: red;
 }
 body{
     background-color: $backgroundColor;
-  }
+}
 
 header{
     h1{
@@ -40,6 +40,8 @@ main{
         background-color: $whiteColor;
         padding:0.5em 1em;
         border-color: $whiteColor;
+        margin-top: 1em;
+        display: inline-block;
     }
 } 
 main{
@@ -53,4 +55,7 @@ main{
         display: flex;
        justify-content: space-between; 
     }
+}
+.hide{
+    display: none;
 }

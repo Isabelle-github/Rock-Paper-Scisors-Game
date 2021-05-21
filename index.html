@@ -14,16 +14,16 @@
         <h1>Rock Paper Scisors</h1>
     </header>
     <main>
-        <form action="" id="round">
-            <label for="">How many rounds?</label><br>
-            <input type="radio" id="five" name="rounds">
-            <label for="">5 Rounds</label><br>
-            <input type="radio" id="ten" name="rounds">
-            <label for="">10 Rounds</label><br>
-            <input type="radio" id="fifteen" name="rounds">
-            <label for="">15 Rounds</label><br>
-            <input type="radio" id="twenty" name="rounds">
-            <label for="">20 Rounds</label>
+        <form action="" id="round">How many rounds? <br>
+            <input type="radio" id="five" name="rounds" value="5">
+            <label for="five">5 Rounds</label><br>
+            <input type="radio" id="ten" name="rounds" value="10">
+            <label for="ten">10 Rounds</label><br>
+            <input type="radio" id="fifteen" name="rounds" value="15">
+            <label for="fifteen">15 Rounds</label><br>
+            <input type="radio" id="twenty" name="rounds" value="20">
+            <label for="twenty">20 Rounds</label>
+            <h1 id="countUp"></h1>
         </form>
         <article>
             <h3>User</h3>
@@ -31,9 +31,9 @@
             <h3>Computer</h3>
         </article>
         <h1>Let's Play</h1>
-        <img src="./assets/img/icons8-ganze-hand-80.png" alt="pic Hand open">
-        <img src="./assets/img/icons8-hand_-felsen-50.png" alt="pic Hand closed in rock">
-        <img src="./assets/img/icons8-hand_-schere-50.png" alt="pic hand in cisors">
+        <img src="./assets/img/icons8-ganze-hand-80.png" alt="pic Hand open" onclick="handClick()">
+        <img src="./assets/img/icons8-hand_-felsen-50.png" alt="pic Hand closed in rock" onclick="handClick()">
+        <img src="./assets/img/icons8-hand_-schere-50.png" alt="pic hand in cisors" onclick="handClick()">
         <p>Make your move</p>
         <a href="#">Restart</a>
     </main>
