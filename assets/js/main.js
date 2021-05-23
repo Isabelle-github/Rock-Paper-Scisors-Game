@@ -7,14 +7,24 @@ const score = document.getElementById("score");
 const comments = document.getElementById("comments");
 let countRound = 0;
 let userScore = 0;
-let commputerScore = 0;
+let computerScore = 0;
 
 function handClick() {
     // open hand was cliked. display the countUp of corresponding round
     // add +1 on the count up each time the user clicked
     // hide all oder round radio buttons
     // document.getElementById("round").classList.add("hide");
-    score.innerHTML = `${userScore} : ${commputerScore}`;
+    if (round5.checked) {
+        endOfRound(round5);
+    } else if (round10.checked) {
+        endOfRound(round10);
+    } else if (round15.checked) {
+        endOfRound(round15);
+    } else {
+        endOfRound(round20);
+    }
+
+    score.innerHTML = `${userScore} : ${computerScore}`;
     comments.innerHTML = `User:Paper `;
     //computerMove();
     let saveRandomNum = Math.floor(Math.random() * 50) + 1;
@@ -24,15 +34,17 @@ function handClick() {
     switch (saveRandomNum % 3) {
         case 0:
             comments.innerHTML += ` Computer:Paper  No Winner!!`;
-            console.log(saveRandomNum + "case0")
+            console.log(saveRandomNum + "case0");
             break;
 
         case 1:
             comments.innerHTML += ` Computer:Rock  You lose!!`;
+            computerScore += 1;
             console.log(saveRandomNum + "case1")
             break;
         case 2:
             comments.innerHTML += ` Computer:Scisors  You lose!!`;
+            computerScore += 1;
             console.log(saveRandomNum + "case2");
             break;
     }
@@ -67,7 +79,7 @@ function handClick() {
     }
 }
 function rockClick() {
-    score.innerHTML = `${userScore} : ${commputerScore}`;
+    score.innerHTML = `${userScore} : ${computerScore}`;
     comments.innerHTML = `User:Rock `;
     //computerMove();
     let saveRandomNum = Math.floor(Math.random() * 50) + 1;
@@ -76,16 +88,18 @@ function rockClick() {
     console.log(typeof saveRandomNum);
     switch (saveRandomNum % 3) {
         case 0:
-            comments.innerHTML += ` Computer:Paper  No Winner!!`;
+            comments.innerHTML += ` Computer:Paper  You win!!`;
+            userScore += 1;
             console.log(saveRandomNum + "case0")
             break;
 
         case 1:
-            comments.innerHTML += ` Computer:Rock  You lose!!`;
+            comments.innerHTML += ` Computer:Rock  No Winner!!`;
             console.log(saveRandomNum + "case1")
             break;
         case 2:
-            comments.innerHTML += ` Computer:Scisors  You lose!!`;
+            comments.innerHTML += ` Computer:Scisors  You win!!`;
+            userScore += 1;
             console.log(saveRandomNum + "case2");
             break;
     }
@@ -120,7 +134,7 @@ function rockClick() {
     }
 }
 function scisorClick() {
-    score.innerHTML = `${userScore} : ${commputerScore}`;
+    score.innerHTML = `${userScore} : ${computerScore}`;
     comments.innerHTML = `User:Scisors `;
     //computerMove();
     let saveRandomNum = Math.floor(Math.random() * 50) + 1;
@@ -129,16 +143,18 @@ function scisorClick() {
     console.log(typeof saveRandomNum);
     switch (saveRandomNum % 3) {
         case 0:
-            comments.innerHTML += ` Computer:Paper  No Winner!!`;
+            comments.innerHTML += ` Computer:Paper  You win!!`;
+            userScore += 1;
             console.log(saveRandomNum + "case0")
             break;
 
         case 1:
             comments.innerHTML += ` Computer:Rock  You lose!!`;
+            computerScore += 1;
             console.log(saveRandomNum + "case1")
             break;
         case 2:
-            comments.innerHTML += ` Computer:Scisors  You lose!!`;
+            comments.innerHTML += ` Computer:Scisors  No Winner!!`;
             console.log(saveRandomNum + "case2");
             break;
     }
@@ -194,13 +210,23 @@ function computerMove() {
             break;
     }
 }
-function userMove() {
-
+function endOfRound(round) {
+    console.log(countRound.toString() + typeof countRound.toString());
+    console.log(round.value + typeof round.value);
+    if (countRound.toString() == round.value) {
+        if (userScore > computerScore) {
+            comments.innerHTML = `Well done you are the winner!!`
+        } else if (userScore == computerScore) {
+            comments.innerHTML = `The round was very tight, no Winner!!`
+        } else {
+            comments.innerHTML = `Computer won this round, but you should try again!!`
+        }
+    }
 }
 function restart() {
     userScore = 0;
-    commputerScore = 0;
-    score.innerHTML = `${userScore} : ${commputerScore}`;
+    computerScore = 0;
+    score.innerHTML = `${userScore} : ${computerScore}`;
     comments.innerHTML = ``;
 }
 // Math.floor rundet ab
