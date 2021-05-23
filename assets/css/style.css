@@ -14,18 +14,27 @@ body {
 }
 
 header h1 {
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
+  margin-top: 5rem;
   text-align: center;
-  border-style: solid;
+  border-top: 2px solid #2e2e2e;
+  padding: 1rem;
+  color: #2e2e2e;
 }
 
 main {
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
   text-align: center;
-  border-style: solid;
   background-color: #2e2e2e;
+}
+
+main img {
+  display: inline-block;
+  margin: 2em;
+  width: 3em;
+  height: 3em;
 }
 
 main a {
@@ -35,14 +44,14 @@ main a {
   background-color: #fff;
   padding: 0.5em 1em;
   border-color: #fff;
-  margin-top: 1em;
+  margin: 1em;
   display: inline-block;
 }
 
 main form, main article {
-  border: solid 1px #fff;
+  border: solid 1px #737373;
   width: 50%;
-  margin: 0 auto;
+  margin: 2em auto;
   margin-top: 1em;
 }
 
@@ -53,5 +62,10 @@ main article {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 2em;
+}
+
+.hide {
+  display: none !important;
 }
 /*# sourceMappingURL=style.css.map */
