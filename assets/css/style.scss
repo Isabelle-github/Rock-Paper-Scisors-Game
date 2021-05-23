@@ -4,7 +4,7 @@
 
 $backgroundColor: rgb(115, 115, 115);
 $blackColor:#2e2e2e ;
-$whiteColor:#fff;
+$whiteColor:#F4F4F2;
 $redColor: red;
 
 
@@ -28,6 +28,7 @@ header{
         border-top: 2px solid $blackColor;
         padding: 1rem;
         color: $blackColor;
+        text-transform: uppercase;
     }
 }
 main{
@@ -35,34 +36,94 @@ main{
     margin:0 auto;
     text-align: center;
     background-color: $blackColor;
+    border-radius: 3em;
+    div{
+        display: inline-block;
+        input{
+            margin-top: 2em;
+            color: $backgroundColor;
+        }
+        label{
+            margin-right: 2em;
+            margin-top: 2em;
+        }
+    }
+    div.icons{
+        display: inline-block;
+        border-radius: 50%;
+        border:2px solid $backgroundColor;
+        margin:1em
+    }
+    div.icons:hover img{
+        width: 3.5em;
+        height: 3.5em;
+    }
+    div.icons:hover{
+        background-color: $backgroundColor;
+    }
     img{
         display: inline-block;
-        margin: 2em;
+        margin: 0.5em;
         width: 3em;
         height: 3em;
     }
     a{
         text-decoration: none;
         text-transform: none;
+        color: $blackColor;
+        background-color: $backgroundColor;
+        padding:0.5em 1em;
+        border-color: $whiteColor;
+        margin: 1em;
+        display: inline-block;
+        border-radius: 2em;
+    }
+    a:hover{
         color: $backgroundColor;
         background-color: $whiteColor;
         padding:0.5em 1em;
         border-color: $whiteColor;
         margin: 1em;
-        display: inline-block;
     }
 } 
 main{
     form, article{
+        display: inline-block;
        border: solid 1px $backgroundColor;
        width: 50%;
-       margin: 2em auto;
+       margin: 3em auto;
        margin-top: 1em;
+       border-radius: 2em;
+       h2{
+           padding-top: 1em;
+       }
+       h3{
+           background-color: $redColor;
+           width: 6em;
+           height: 2em;
+           border-radius: 0.5em;
+           padding-top: 0.5em;
+           text-transform: uppercase;
+       }
     }
     article{
-        display: flex;
+       display: flex;
        justify-content: space-between; 
        padding: 2em;
+       h3:first-of-type{
+           position: relative;
+           right: 5em;
+       }
+       h3:last-of-type{
+        position: relative;
+        left: 5em;
+       }
+       h1:hover{
+        font-size: 2.5em;
+    }
+    }
+    p{
+        text-transform: uppercase;
     }
 }
 .hide{

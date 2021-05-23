@@ -6,7 +6,7 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: #fff;
+  color: #F4F4F2;
 }
 
 body {
@@ -21,6 +21,7 @@ header h1 {
   border-top: 2px solid #2e2e2e;
   padding: 1rem;
   color: #2e2e2e;
+  text-transform: uppercase;
 }
 
 main {
@@ -28,11 +29,42 @@ main {
   margin: 0 auto;
   text-align: center;
   background-color: #2e2e2e;
+  border-radius: 3em;
+}
+
+main div {
+  display: inline-block;
+}
+
+main div input {
+  margin-top: 2em;
+  color: #737373;
+}
+
+main div label {
+  margin-right: 2em;
+  margin-top: 2em;
+}
+
+main div.icons {
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid #737373;
+  margin: 1em;
+}
+
+main div.icons:hover img {
+  width: 3.5em;
+  height: 3.5em;
+}
+
+main div.icons:hover {
+  background-color: #737373;
 }
 
 main img {
   display: inline-block;
-  margin: 2em;
+  margin: 0.5em;
   width: 3em;
   height: 3em;
 }
@@ -40,19 +72,43 @@ main img {
 main a {
   text-decoration: none;
   text-transform: none;
-  color: #737373;
-  background-color: #fff;
+  color: #2e2e2e;
+  background-color: #737373;
   padding: 0.5em 1em;
-  border-color: #fff;
+  border-color: #F4F4F2;
   margin: 1em;
   display: inline-block;
+  border-radius: 2em;
+}
+
+main a:hover {
+  color: #737373;
+  background-color: #F4F4F2;
+  padding: 0.5em 1em;
+  border-color: #F4F4F2;
+  margin: 1em;
 }
 
 main form, main article {
+  display: inline-block;
   border: solid 1px #737373;
   width: 50%;
-  margin: 2em auto;
+  margin: 3em auto;
   margin-top: 1em;
+  border-radius: 2em;
+}
+
+main form h2, main article h2 {
+  padding-top: 1em;
+}
+
+main form h3, main article h3 {
+  background-color: red;
+  width: 6em;
+  height: 2em;
+  border-radius: 0.5em;
+  padding-top: 0.5em;
+  text-transform: uppercase;
 }
 
 main article {
@@ -63,6 +119,24 @@ main article {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 2em;
+}
+
+main article h3:first-of-type {
+  position: relative;
+  right: 5em;
+}
+
+main article h3:last-of-type {
+  position: relative;
+  left: 5em;
+}
+
+main article h1:hover {
+  font-size: 2.5em;
+}
+
+main p {
+  text-transform: uppercase;
 }
 
 .hide {
