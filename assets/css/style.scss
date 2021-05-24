@@ -54,13 +54,11 @@ main{
         border:2px solid $backgroundColor;
         margin:1em
     }
-    div.icons:hover img{
-        width: 3.5em;
-        height: 3.5em;
-    }
-    div.icons:hover{
+    div.icons:hover {
+        border: 2px $whiteColor solid;
         background-color: $backgroundColor;
     }
+   
     img{
         display: inline-block;
         margin: 0.5em;
@@ -129,3 +127,4 @@ main{
 .hide{
     display: none !important;
 }
+

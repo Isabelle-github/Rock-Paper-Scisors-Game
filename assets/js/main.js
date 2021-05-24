@@ -22,10 +22,28 @@ function checkEnd() {
     }
 }
 function play() {
-    hideElements();
-    countRound = countRound + 1;
-    countUp.innerHTML = `${countRound} / ${round5.value} Rounds`;
-    checkEnd();
+    if (round5.checked) {
+        hideElements();
+        countRound = countRound + 1;
+        countUp.innerHTML = `${countRound} / ${round5.value} Rounds`;
+        checkEnd();
+    } else if (round10.checked) {
+        hideElements();
+        countRound = countRound + 1;
+        countUp.innerHTML = `${countRound} / ${round10.value} Rounds`;
+        checkEnd();
+    } else if (round15.checked) {
+        hideElements();
+        countRound = countRound + 1;
+        countUp.innerHTML = `${countRound} / ${round15.value} Rounds`;
+        checkEnd();
+    } else {
+        hideElements();
+        countRound = countRound + 1;
+        countUp.innerHTML = `${countRound} / ${round20.value} Rounds`;
+        checkEnd();
+    }
+
 }
 
 function whichRound() {
@@ -52,15 +70,15 @@ function handClick() {
             comments.innerHTML += ` Computer: Paper,  No Winner!!`;
             score.innerHTML = `${userScore} : ${computerScore}`;
             checkEnd();
-            console.log(saveRandomNum + "case0");
+            //console.log(saveRandomNum + "case0");
             break;
 
         case 1:
-            comments.innerHTML += ` Computer: Rock,  You lose!!`;
-            computerScore += 1;
+            comments.innerHTML += ` Computer: Rock,  You win!!`;
+            userScore += 1;
             score.innerHTML = `${userScore} : ${computerScore}`;
             checkEnd();
-            console.log(saveRandomNum + "case1")
+            //console.log(saveRandomNum + "case1")
             break;
         case 2:
             comments.innerHTML += ` Computer: Scisors,  You lose!!`;
@@ -68,7 +86,7 @@ function handClick() {
             score.innerHTML = `${userScore} : ${computerScore}`;
             checkEnd();
 
-            console.log(saveRandomNum + "case2");
+            //console.log(saveRandomNum + "case2");
             break;
     }
     whichRound();
@@ -86,25 +104,25 @@ function rockClick() {
     // console.log(typeof saveRandomNum);
     switch (saveRandomNum % 3) {
         case 0:
-            comments.innerHTML += ` Computer: Paper,  You win!!`;
-            userScore += 1;
+            comments.innerHTML += ` Computer: Paper,  You lose!!`;
+            computerScore += 1;
             score.innerHTML = `${userScore} : ${computerScore}`;
             checkEnd();
-            console.log(saveRandomNum + "case0")
+            //console.log(saveRandomNum + "case0")
             break;
 
         case 1:
             comments.innerHTML += ` Computer: Rock,  No Winner!!`;
             score.innerHTML = `${userScore} : ${computerScore}`;
             checkEnd();
-            console.log(saveRandomNum + "case1")
+            //console.log(saveRandomNum + "case1")
             break;
         case 2:
             comments.innerHTML += ` Computer: Scisors,  You win!!`;
             userScore += 1;
             score.innerHTML = `${userScore} : ${computerScore}`;
             checkEnd();
-            console.log(saveRandomNum + "case2");
+            //console.log(saveRandomNum + "case2");
             break;
     }
     whichRound();
@@ -195,3 +213,5 @@ function hideElements() {
         y[i].style.display = "none";
     }
 }
+
+// grün rot grun icon und radio buttons color

@@ -53,12 +53,8 @@ main div.icons {
   margin: 1em;
 }
 
-main div.icons:hover img {
-  width: 3.5em;
-  height: 3.5em;
-}
-
 main div.icons:hover {
+  border: 2px #F4F4F2 solid;
   background-color: #737373;
 }
 
