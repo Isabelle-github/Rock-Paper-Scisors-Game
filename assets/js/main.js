@@ -213,5 +213,4 @@ function hideElements() {
         y[i].style.display = "none";
     }
 }
-
-// grün rot grun icon und radio buttons color
+function history() { }
