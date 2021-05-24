@@ -127,4 +127,20 @@ main{
 .hide{
     display: none !important;
 }
+figure{
+    display: block;
+    width: 70%;
+    margin: 2em auto;
+}
+figcaption{
+    font-size: 2em;
+    padding: 1em;
+}
+h5{
+    font-size: 1.5em;
+    span{
+        font-style: italic;
+        color: $redColor;
+    }
+}
 
