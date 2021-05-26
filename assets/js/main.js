@@ -6,10 +6,12 @@ const countUp = document.getElementById("countUp");
 const score = document.getElementById("score");
 const comments = document.getElementById("comments");
 const results = document.getElementById("results");
+let gameHistory = [];
+
 let countRound = 0;
 let userScore = 0;
 let computerScore = 0;
-score.innerHTML = `${userScore} : ${computerScore}`;
+//core.innerHTML = `${userScore} : ${computerScore}`;
 
 function checkEnd() {
     if (round5.checked) {
@@ -58,6 +60,7 @@ function whichRound() {
 }
 
 function handClick() {
+    let round = {};
     score.innerHTML = `${userScore} : ${computerScore}`;
     comments.innerHTML = `User: Paper, `;
     comments.style.color = "white";
@@ -68,33 +71,46 @@ function handClick() {
     // console.log(typeof saveRandomNum);
     switch (saveRandomNum % 3) {
         case 0:
+            round.userMove = "Paper";
+            round.compMove = "Paper";
+            gameHistory.push(round);
             comments.innerHTML += ` Computer: Paper,  No Winner!!`;
             score.innerHTML = `${userScore} : ${computerScore}`;
-            checkEnd();
+
+            //checkEnd();
             //console.log(saveRandomNum + "case0");
             break;
 
         case 1:
+            round.userMove = "Paper";
+            round.compMove = "Rock";
+            gameHistory.push(round);
             comments.innerHTML += ` Computer: Rock,  You win!!`;
             userScore += 1;
             score.innerHTML = `${userScore} : ${computerScore}`;
-            checkEnd();
+
+            //checkEnd();
             //console.log(saveRandomNum + "case1")
             break;
         case 2:
+            round.userMove = "Paper";
+            round.compMove = "Scisors";
+            gameHistory.push(round);
             comments.innerHTML += ` Computer: Scisors,  You lose!!`;
             computerScore += 1;
             score.innerHTML = `${userScore} : ${computerScore}`;
-            checkEnd();
+            //checkEnd();
 
             //console.log(saveRandomNum + "case2");
             break;
     }
     whichRound();
+    console.log(gameHistory);
 
 }
 
 function rockClick() {
+    let round = {};
     score.innerHTML = `${userScore} : ${computerScore}`;
     comments.innerHTML = `User: Rock, `;
     comments.style.color = "white";
@@ -105,6 +121,9 @@ function rockClick() {
     // console.log(typeof saveRandomNum);
     switch (saveRandomNum % 3) {
         case 0:
+            round.userMove = "Rock";
+            round.compMove = "Paper";
+            gameHistory.push(round);
             comments.innerHTML += ` Computer: Paper,  You lose!!`;
             computerScore += 1;
             score.innerHTML = `${userScore} : ${computerScore}`;
@@ -113,12 +132,18 @@ function rockClick() {
             break;
 
         case 1:
+            round.userMove = "Rock";
+            round.compMove = "Rock";
+            gameHistory.push(round);
             comments.innerHTML += ` Computer: Rock,  No Winner!!`;
             score.innerHTML = `${userScore} : ${computerScore}`;
             checkEnd();
             //console.log(saveRandomNum + "case1")
             break;
         case 2:
+            round.userMove = "Rock";
+            round.compMove = "Scisors";
+            gameHistory.push(round);
             comments.innerHTML += ` Computer: Scisors,  You win!!`;
             userScore += 1;
             score.innerHTML = `${userScore} : ${computerScore}`;
@@ -127,9 +152,11 @@ function rockClick() {
             break;
     }
     whichRound();
+    console.log(gameHistory);
 }
 
 function scisorClick() {
+    let round = {};
     score.innerHTML = `${userScore} : ${computerScore}`;
     comments.innerHTML = `User: Scisors, `;
     comments.style.color = "white";
@@ -140,6 +167,9 @@ function scisorClick() {
     // console.log(typeof saveRandomNum);
     switch (saveRandomNum % 3) {
         case 0:
+            round.userMove = "Scisors";
+            round.compMove = "Paper";
+            gameHistory.push(round);
             comments.innerHTML += ` Computer: Paper,  You win!!`;
             userScore += 1;
             score.innerHTML = `${userScore} : ${computerScore}`;
@@ -148,6 +178,9 @@ function scisorClick() {
             break;
 
         case 1:
+            round.userMove = "Scisors";
+            round.compMove = "Rock";
+            gameHistory.push(round);
             comments.innerHTML += ` Computer: Rock, You lose!!`;
             computerScore += 1;
             score.innerHTML = `${userScore} : ${computerScore}`;
@@ -155,6 +188,9 @@ function scisorClick() {
             // console.log(saveRandomNum + "case1")
             break;
         case 2:
+            round.userMove = "Scisors";
+            round.compMove = "Scisors";
+            gameHistory.push(round);
             comments.innerHTML += ` Computer: Scisors,  No Winner!!`;
             score.innerHTML = `${userScore} : ${computerScore}`;
             checkEnd();
@@ -162,6 +198,7 @@ function scisorClick() {
             break;
     }
     whichRound();
+    console.log(gameHistory);
 }
 
 function endOfRound(round) {
