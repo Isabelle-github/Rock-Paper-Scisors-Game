@@ -9,6 +9,7 @@ const results = document.getElementById("results");
 let countRound = 0;
 let userScore = 0;
 let computerScore = 0;
+score.innerHTML = `${userScore} : ${computerScore}`;
 
 function checkEnd() {
     if (round5.checked) {
@@ -178,14 +179,14 @@ function endOfRound(round) {
 
         } else if (userScore == computerScore) {
             // console.log("you win");
-            comments.innerHTML = `The round was very tight, no Winner!!
+            comments.innerHTML = `The game was very tight, no Winner!!
             Score ${userScore} : ${computerScore}`;
             comments.style.color = "red";
             comments.style.fontSize = "2.5em";
             restart();
         } else {
             // console.log("no one wins");
-            comments.innerHTML = `Computer won this round,
+            comments.innerHTML = `Computer won this game,
             but you should try again!!
             Score ${userScore} : ${computerScore}`;
             comments.style.color = "red";
