@@ -12,7 +12,7 @@ let gameHistory = [];
 let countRound = 0;
 let userScore = 0;
 let computerScore = 0;
-//core.innerHTML = `${userScore} : ${computerScore}`;
+score.innerHTML = `${userScore} : ${computerScore}`;
 
 function checkEnd() {
     if (round5.checked) {
@@ -61,6 +61,7 @@ function whichRound() {
 }
 
 function handClick() {
+    history.classList.add("hide");
     let round = {};
     score.innerHTML = `${userScore} : ${computerScore}`;
     comments.innerHTML = `User: Paper, `;
@@ -75,7 +76,7 @@ function handClick() {
             round.userMove = "Paper";
             round.compMove = "Paper";
             gameHistory.push(round);
-            comments.innerHTML += ` Computer: Paper,  No Winner!!`;
+            comments.innerHTML += ` Computer: ${round.compMove},  No Winner!!`;
             score.innerHTML = `${userScore} : ${computerScore}`;
 
             //checkEnd();
@@ -86,7 +87,7 @@ function handClick() {
             round.userMove = "Paper";
             round.compMove = "Rock";
             gameHistory.push(round);
-            comments.innerHTML += ` Computer: Rock,  You win!!`;
+            comments.innerHTML += ` Computer: ${round.compMove},  You win!!`;
             userScore += 1;
             score.innerHTML = `${userScore} : ${computerScore}`;
 
@@ -97,7 +98,7 @@ function handClick() {
             round.userMove = "Paper";
             round.compMove = "Scisors";
             gameHistory.push(round);
-            comments.innerHTML += ` Computer: Scisors,  You lose!!`;
+            comments.innerHTML += ` Computer: ${round.compMove},  You lose!!`;
             computerScore += 1;
             score.innerHTML = `${userScore} : ${computerScore}`;
             //checkEnd();
@@ -111,6 +112,7 @@ function handClick() {
 }
 
 function rockClick() {
+    history.classList.add("hide");
     let round = {};
     score.innerHTML = `${userScore} : ${computerScore}`;
     comments.innerHTML = `User: Rock, `;
@@ -125,7 +127,7 @@ function rockClick() {
             round.userMove = "Rock";
             round.compMove = "Paper";
             gameHistory.push(round);
-            comments.innerHTML += ` Computer: Paper,  You lose!!`;
+            comments.innerHTML += ` Computer: ${round.compMove},  You lose!!`;
             computerScore += 1;
             score.innerHTML = `${userScore} : ${computerScore}`;
             checkEnd();
@@ -136,7 +138,7 @@ function rockClick() {
             round.userMove = "Rock";
             round.compMove = "Rock";
             gameHistory.push(round);
-            comments.innerHTML += ` Computer: Rock,  No Winner!!`;
+            comments.innerHTML += ` Computer: ${round.compMove},  No Winner!!`;
             score.innerHTML = `${userScore} : ${computerScore}`;
             checkEnd();
             //console.log(saveRandomNum + "case1")
@@ -145,7 +147,7 @@ function rockClick() {
             round.userMove = "Rock";
             round.compMove = "Scisors";
             gameHistory.push(round);
-            comments.innerHTML += ` Computer: Scisors,  You win!!`;
+            comments.innerHTML += ` Computer: ${round.compMove},  You win!!`;
             userScore += 1;
             score.innerHTML = `${userScore} : ${computerScore}`;
             checkEnd();
@@ -157,6 +159,7 @@ function rockClick() {
 }
 
 function scisorClick() {
+    history.classList.add("hide");
     let round = {};
     score.innerHTML = `${userScore} : ${computerScore}`;
     comments.innerHTML = `User: Scisors, `;
@@ -171,7 +174,7 @@ function scisorClick() {
             round.userMove = "Scisors";
             round.compMove = "Paper";
             gameHistory.push(round);
-            comments.innerHTML += ` Computer: Paper,  You win!!`;
+            comments.innerHTML += ` Computer: ${round.compMove},  You win!!`;
             userScore += 1;
             score.innerHTML = `${userScore} : ${computerScore}`;
             checkEnd();
@@ -182,7 +185,7 @@ function scisorClick() {
             round.userMove = "Scisors";
             round.compMove = "Rock";
             gameHistory.push(round);
-            comments.innerHTML += ` Computer: Rock, You lose!!`;
+            comments.innerHTML += ` Computer: ${round.compMove}, You lose!!`;
             computerScore += 1;
             score.innerHTML = `${userScore} : ${computerScore}`;
             checkEnd();
@@ -192,7 +195,7 @@ function scisorClick() {
             round.userMove = "Scisors";
             round.compMove = "Scisors";
             gameHistory.push(round);
-            comments.innerHTML += ` Computer: Scisors,  No Winner!!`;
+            comments.innerHTML += ` Computer: ${round.compMove},  No Winner!!`;
             score.innerHTML = `${userScore} : ${computerScore}`;
             checkEnd();
             // console.log(saveRandomNum + "case2");
@@ -254,6 +257,7 @@ function hideElements() {
     }
 }
 function showHistory() {
+    history.classList.remove("hide");
     gameHistory.forEach((obj) => {
         history.innerHTML += `
             <tr>

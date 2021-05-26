@@ -120,7 +120,7 @@ main{
         position: relative;
         left: 5em;
        }
-       h1:hover{
+       h1{
         font-size: 2.5em;
     }
     }
@@ -167,4 +167,19 @@ input[type="radio"] {
 // when button checked
 .radio-toolbar input[type="radio"]:checked + label {
     border: 2px solid $whiteColor;
+}
+
+/////======Table- Game history===//////////
+table {
+    margin: 1em auto;
+    border: 1px solid $backgroundColor;
+    width: 20%;
+    th{
+        color: $redColor;
+    }
+    
+    th, td{
+        border: 1px solid $backgroundColor;
+        width: 50%;
+    }
 }
