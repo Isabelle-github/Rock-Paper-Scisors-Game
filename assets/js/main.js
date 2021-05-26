@@ -6,6 +6,7 @@ const countUp = document.getElementById("countUp");
 const score = document.getElementById("score");
 const comments = document.getElementById("comments");
 const results = document.getElementById("results");
+const history = document.getElementById("history");
 let gameHistory = [];
 
 let countRound = 0;
@@ -238,6 +239,7 @@ function restart() {
     userScore = 0;
     computerScore = 0;
     score.innerHTML = `${userScore} : ${computerScore}`;
+    showHistory();
 }
 
 function hideElements() {
@@ -251,4 +253,17 @@ function hideElements() {
         y[i].style.display = "none";
     }
 }
-function history() { }
+function showHistory() {
+    gameHistory.forEach((obj) => {
+        history.innerHTML += `
+            <tr>
+                <td>${obj.userMove}</td>
+                <td>${obj.compMove}</td>
+            </tr>
+            `
+        console.log(obj.userMove)
+        console.log(obj.compMove)
+    })
+}
+
+
